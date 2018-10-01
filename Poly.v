@@ -1064,37 +1064,37 @@ Definition three : nat := @doit3times.
 
 (** Successor of a natural number: *)
 
-Definition succ (n : nat) : nat :=
-  fun (X : Type) (f : X -> X) (x : X) => f (n X f x).
+Definition succ (n : nat) : nat
+  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
 
 Example succ_1 : succ zero = one.
-Proof. reflexivity. Qed.
+Proof. (* FILL IN HERE *) Admitted.
 
 Example succ_2 : succ one = two.
-Proof.  reflexivity. Qed.
+Proof. (* FILL IN HERE *) Admitted.
 
 Example succ_3 : succ two = three.
-Proof. reflexivity. Qed.
+Proof. (* FILL IN HERE *) Admitted.
 
 (** Addition of two natural numbers: *)
 
-Definition plus (n m : nat) : nat :=
-  fun (X : Type) (f : X -> X) (x : X) => n X f (m X f x).
+Definition plus (n m : nat) : nat
+  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
 
 Example plus_1 : plus zero one = one.
-Proof. reflexivity. Qed.
+Proof. (* FILL IN HERE *) Admitted.
 
 Example plus_2 : plus two three = plus three two.
-Proof. reflexivity. Qed.
+Proof. (* FILL IN HERE *) Admitted.
 
 Example plus_3 :
   plus (plus two two) three = plus one (plus three three).
-Proof. reflexivity. Qed.
+Proof. (* FILL IN HERE *) Admitted.
 
 (** Multiplication: *)
 
 Definition mult (n m : nat) : nat
-  fun (X : Type) (f: X -> X) (x : X) => plus n (m X f x).
+  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
 
 Example mult_1 : mult one one = one.
 Proof. (* FILL IN HERE *) Admitted.

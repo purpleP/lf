@@ -286,6 +286,15 @@ Proof.
     and it turns out that doing [rewrite -> plus_comm] will affect
     only the _outer_ one... *)
 
+Theorem plus_rearrange_firsttry : forall n m p q : nat,
+  (n + m) + (p + q) = (m + n) + (p + q).
+Proof.
+  intros n m p q.
+  (* We just need to swap (n + m) for (m + n)... seems
+     like plus_comm should do the trick! *)
+  rewrite -> plus_comm.
+  (* Doesn't work...Coq rewrote the wrong plus! *)
+Abort.
 
 (** To use [plus_comm] at the point where we need it, we can introduce
     a local lemma stating that [n + m = m + n] (for the particular [m]
