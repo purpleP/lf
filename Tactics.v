@@ -73,7 +73,7 @@ Theorem silly_ex :
      evenb 3 = true ->
      oddb 4 = true.
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros H eq. apply eq. Qed.
 (** [] *)
 
 (** To use the [apply] tactic, the (conclusion of the) fact
@@ -105,7 +105,10 @@ Theorem rev_exercise1 : forall (l l' : list nat),
      l = rev l' ->
      l' = rev l.
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros l l' H.
+  symmetry.
+  rewrite H.
+  apply rev_involutive.
 (** [] *)
 
 (** **** Exercise: 1 star, optional (apply_rewrite)  *)
@@ -173,8 +176,8 @@ Example trans_eq_exercise : forall (n m o p : nat),
      (n + p) = m ->
      (n + p) = (minustwo o).
 Proof.
-  (* FILL IN HERE *) Admitted.
-(** [] *)
+  intros n m o p eq1 eq2.
+  apply trans_eq with (m:=m). apply eq2. apply eq1. Qed.
 
 (* ################################################################# *)
 (** * The [inversion] Tactic *)
@@ -212,7 +215,7 @@ Proof.
 
 Theorem S_injective : forall (n m : nat),
   S n = S m ->
-  n = m.
+  n = m
 Proof.
   intros n m H.
 
