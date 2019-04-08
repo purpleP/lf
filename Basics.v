@@ -1213,7 +1213,13 @@ Proof.
     function [f] has the property that [f x = negb x].*)
 
 (* FILL IN HERE *)
-(** [] *)
+Theorem negation_fn_applied_twice :
+  forall (b: bool), negb (negb b) = b.
+Proof.
+  intros b. destruct b.
+  - reflexivity.
+  - reflexivity.
+  Qed.
 
 (** **** Exercise: 3 stars, optional (andb_eq_orb)  *)
 (** Prove the following theorem.  (Hint: This one can be a bit tricky,
