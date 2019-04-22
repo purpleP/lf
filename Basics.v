@@ -1232,7 +1232,14 @@ Theorem andb_eq_orb :
   (andb b c = orb b c) ->
   b = c.
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros b c H. destruct c.
+  - destruct b.
+    + reflexivity.
+    + simpl in H. rewrite -> H. reflexivity.
+  - destruct b.
+    + simpl in H. rewrite -> H. reflexivity.
+    + reflexivity.
+  Qed.
 
 (** [] *)
 
