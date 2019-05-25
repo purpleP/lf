@@ -1287,5 +1287,18 @@ Proof.
         then converting it to unary should yield the same result as
         first converting it to unary and then incrementing. *)
 
-(** [] *)
+Inductive bin : Type :=
+  | Z : bin
+  | D : bin -> bin
+  | N : bin -> bin.
+
+Definition incr (b: bin) :=
+  N b.
+
+Fixpoint bin_to_nat (b: bin) : nat :=
+  match b with
+  | Z => O
+  | D x => mult (bin_to_nat x) (S (S O))
+  | N x => S (bin_to_nat x)
+  end.
 
